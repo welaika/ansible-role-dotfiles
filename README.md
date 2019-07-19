@@ -1,5 +1,7 @@
-Role Name
+Ansible Role Dotfiles
 =========
+
+[![Build Status](https://travis-ci.org/welaika/ansible-role-dotfiles.svg?branch=master)](https://travis-ci.org/welaika/ansible-role-dotfiles)
 
 A brief description of the role goes here.
 
