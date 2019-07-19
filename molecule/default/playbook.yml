@@ -3,12 +3,14 @@
   hosts: all
 
   vars:
-    dotfiles_user: jerry
+    my_user: jerry
 
   pre_tasks:
     - name: Create the user that will use the files
       user:
-        name: "{{ dotfiles_user }}"
+        name: "{{ my_user }}"
 
   roles:
     - role: ansible-role-dotfiles
+      vars:
+        dotfiles_user: "{{ my_user }}"
