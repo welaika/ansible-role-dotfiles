@@ -1,5 +1,14 @@
 ---
 - name: Converge
   hosts: all
+
+  vars:
+    dotfiles_user: jerry
+
+  pre_tasks:
+    - name: Create the user that will use the files
+      user:
+        name: "{{ dotfiles_user }}"
+
   roles:
     - role: ansible-role-dotfiles

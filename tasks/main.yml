@@ -1,2 +1,24 @@
 ---
-# tasks file for ansible-role-dotfiles
+- name: Install requirements
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ dotfiles_dependencies }}"
+
+- name: Clone dotfiles repo
+  become: yes
+  become_user: "{{ dotfiles_user }}"
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "~/.dotfiles"
+    version: master
+    update: no
+
+- name: "Install dotfiles for {{ dotfiles_user }}"
+  become: yes
+  become_user: "{{ dotfiles_user }}"
+  command: /bin/bash install.sh
+  args:
+    chdir: "~/.dotfiles/"
+    creates: "~/.gemrc"  # we use .gemrc, because .bashrc already exists
