@@ -3,15 +3,16 @@ Ansible Role Dotfiles
 
 [![Build Status](https://travis-ci.org/welaika/ansible-role-dotfiles.svg?branch=master)](https://travis-ci.org/welaika/ansible-role-dotfiles)
 
-Install dotfiles for the user from a given repository.
+Install dotfiles for a specific user.
+
+Dotfiles are fetch from a git repository.
 
 Requirements
 ------------
 
-Your dotfiles repository *must* have a `install.sh` files in it. We use it to
-creates symlinks for example.
+Your dotfiles repository *must* have a `install.sh` files in it. Use it to create symlinks. This role won't create symlinks for you.
 
-The user you want to install dotfiles to *must* already exists.
+The user **must** already exist.
 
 Role Variables
 --------------
@@ -20,7 +21,7 @@ These are the default variables:
 
 ```yaml
 dotfiles_repo: https://github.com/welaika/server_dotfiles.git # repository with your your dotifles
-dotfiles_dependencies: # optional dotfiles dependencies, if you define alias or functions for software that is not installed by default
+dotfiles_dependencies: # packages needed by your dotfiles
   - git
   - bash-completion
   - ack-grep
@@ -48,6 +49,17 @@ License
 -------
 
 MIT
+
+Testing
+-------
+
+Install molecule
+
+`$ pip3 install --user 'molecule[docker]'`
+
+Start docker and run
+
+`$ molecule test`
 
 Author Information
 ------------------
