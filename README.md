@@ -38,11 +38,11 @@ Example Playbook
 User `john_doe` *must* already exist.
 
 ```yaml
-    - hosts: servers
-      roles:
-        - role: ansible-role-dotfiles
-          vars:
-            dotfiles_user: "john_doe"
+- hosts: servers
+  roles:
+    - role: ansible-role-dotfiles
+      vars:
+        dotfiles_user: "john_doe"
 ```
 
 License
