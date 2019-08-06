@@ -42,7 +42,7 @@ User `john_doe` *must* already exist.
   roles:
     - role: ansible-role-dotfiles
       vars:
-        dotfiles_user: "john_doe"
+        dotfiles_user: "john_doe"  # mandatory
 ```
 
 License
