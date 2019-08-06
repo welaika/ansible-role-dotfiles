@@ -8,16 +8,16 @@
 
 - name: Clone dotfiles repo
   become: yes
-  become_user: "{{ dotfiles_user }}"
+  become_user: "{{ dotfiles_user | mandatory }}"
   git:
-    repo: "{{ dotfiles_repo }}"
+    repo: "{{ dotfiles_repo | mandatory }}"
     dest: "~/.dotfiles"
     version: master
     update: no
 
-- name: "Install dotfiles for {{ dotfiles_user }}"
+- name: "Install dotfiles for {{ dotfiles_user | mandatory }}"
   become: yes
-  become_user: "{{ dotfiles_user }}"
+  become_user: "{{ dotfiles_user | mandatory }}"
   command: /bin/bash install.sh
   args:
     chdir: "~/.dotfiles/"
