@@ -1,5 +1,5 @@
 Ansible Role Dotfiles
-=========
+=====================
 
 [![Build Status](https://travis-ci.org/welaika/ansible-role-dotfiles.svg?branch=master)](https://travis-ci.org/welaika/ansible-role-dotfiles)
 
@@ -30,7 +30,7 @@ dotfiles_dependencies: # packages needed by your dotfiles
 Dependencies
 ------------
 
-Nope :)
+None :)
 
 Example Playbook
 ----------------
