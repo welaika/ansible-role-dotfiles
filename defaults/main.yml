@@ -3,4 +3,4 @@ dotfiles_repo: https://github.com/welaika/server_dotfiles.git
 dotfiles_dependencies:
   - git
   - bash-completion
-  - ack-grep
+  - silversearcher-ag
